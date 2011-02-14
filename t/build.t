@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More tests => 2;
 use Test::DZil;
 
 my $tzil = Builder->from_config(
@@ -13,3 +13,21 @@ my $tzil = Builder->from_config(
 );
 
 ok(1, "The builder didn't explode on the configuration");
+
+my $build_dir = $tzil->build();
+
+opendir my $dirh, $build_dir or die;
+my @files = grep {/^[^.]/} readdir $dirh;
+my @expected_files = qw(
+	Changes
+	dist.ini
+	lib
+	LICENSE
+	Makefile.PL
+	MANIFEST
+	META.yml
+	README
+	t
+);
+
+is_filelist(\@files, \@expected_files, 'The expected files were built');
