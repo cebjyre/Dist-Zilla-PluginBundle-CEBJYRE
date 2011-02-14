@@ -40,10 +40,8 @@ sub configure {
     CheckPrereqsIndexed
   ));
 
-  $self->add_bundle(
-    'Basic',
-    'Git',
-  );
+  $self->add_bundle('Basic');
+  $self->add_bundle('Git');
 }
 
 __PACKAGE__->meta->make_immutable;
