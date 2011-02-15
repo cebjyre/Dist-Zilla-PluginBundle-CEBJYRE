@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    Added prereqs
 
 0.1.0     2011-02-14 20:58:31 Australia/Sydney
     Fixed massive breakage (didn't work at all)
