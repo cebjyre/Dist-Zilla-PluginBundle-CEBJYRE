@@ -27,6 +27,16 @@ See L<Dist::Zilla::Role::PluginBundle::Easy>.
 
 =cut
 
+use Dist::Zilla::Plugin::PkgVersion;
+use Dist::Zilla::Plugin::AutoPrereqs;
+use Dist::Zilla::Plugin::PodWeaver;
+use Dist::Zilla::Plugin::PodCoverageTests;
+use Dist::Zilla::Plugin::PodSyntaxTests;
+use Dist::Zilla::Plugin::NextRelease;
+use Dist::Zilla::Plugin::CheckPrereqsIndexed;
+use Dist::Zilla::PluginBundle::Basic;
+use Dist::Zilla::PluginBundle::Git;
+
 sub configure {
   my $self = shift;
 
