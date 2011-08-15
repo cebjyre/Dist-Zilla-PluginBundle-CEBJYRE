@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.2.0     2011-08-15 21:29:45 Australia/Sydney
     Pass configuration options through to the Git pluginbundle
 
 0.1.1     2011-02-15 11:45:14 Australia/Sydney
