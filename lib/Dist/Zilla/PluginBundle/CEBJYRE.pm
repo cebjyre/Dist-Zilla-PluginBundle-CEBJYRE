@@ -21,6 +21,15 @@ Using this bundle is equivalent to:
   [@Basic]
   [@Git]
 
+Configurations options may be passed into the Git bundle
+(currently this is the only one supported) by prefacing
+the usual option names with C<git_>.
+
+For example:
+
+  [@CEBJYRE]
+  git_push_to = github
+
 =method configure
 
 See L<Dist::Zilla::Role::PluginBundle::Easy>.
@@ -39,6 +48,7 @@ use Dist::Zilla::PluginBundle::Git;
 
 sub configure {
   my $self = shift;
+  my $payload = $self->payload;
 
   $self->add_plugins(qw(
     PkgVersion
@@ -51,7 +61,8 @@ sub configure {
   ));
 
   $self->add_bundle('Basic');
-  $self->add_bundle('Git');
+  my %git_config = map {substr($_, 4) => $payload->{$_}} grep {/^git_/} keys %$payload;
+  $self->add_bundle(Git => \%git_config);
 }
 
 __PACKAGE__->meta->make_immutable;

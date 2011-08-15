@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    Pass configuration options through to the Git pluginbundle
 
 0.1.1     2011-02-15 11:45:14 Australia/Sydney
     Added prereqs
