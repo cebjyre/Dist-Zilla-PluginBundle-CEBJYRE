@@ -2,6 +2,10 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.3.0     2012-11-19 18:29:20 Australia/Sydney
+    Pass skip options through to AutoPrereqs
+    Repo metadata update
+
 0.2.0     2011-08-15 21:29:45 Australia/Sydney
     Pass configuration options through to the Git pluginbundle
 
