@@ -25,7 +25,7 @@ my @expected_files = qw(
 	LICENSE
 	Makefile.PL
 	MANIFEST
-	META.yml
+	META.json
 	README
 	t
 );
